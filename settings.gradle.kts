@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TugasInfiniteLearning"
+rootProject.name = "TugasILFrontend"
 include(":app")
  

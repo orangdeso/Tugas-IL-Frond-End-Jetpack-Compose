@@ -45,7 +45,7 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Anime List",
+                        text = "Drakor Movie",
                         fontSize = 20.sp,
                         color = fontprimary,
                         fontFamily = interBold
@@ -69,8 +69,9 @@ fun HomeScreen(
                     color = fontprimary,
                     fontFamily = interSemiBold
                 )
-                Spacer(modifier = Modifier.height(10.dp))
-                LazyRow(contentPadding = PaddingValues(2.dp)) {
+                Spacer(modifier = Modifier.height(16.dp))
+                LazyRow(
+                ) {
                     val itemCount = imageId.size
                     items(itemCount) {
                         RowListItem(
@@ -82,14 +83,16 @@ fun HomeScreen(
                     }
                 }
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(32.dp))
                 Text(
                     text = "Lazy Column",
                     fontSize = 26.sp,
                     color = fontprimary,
                     fontFamily = interSemiBold
                 )
-                LazyColumn(contentPadding = PaddingValues(2.dp)) {
+                Spacer(modifier = Modifier.height(16.dp))
+                LazyColumn(
+                ) {
                     val itemCount = imageId.size
                     items(itemCount) {
                         ColumnListItem(
@@ -111,10 +114,12 @@ fun ColumnListItem(
     itemIndex: Int, title: Array<String>, genre: Array<String>, navController: NavController
 ) {
     Column(
-        modifier = Modifier.clickable { navController.navigate("${NavigationScreen.DetailScreenColumn.name}/$itemIndex") }
+        modifier = Modifier.clickable {
+            navController.navigate("${NavigationScreen.DetailColumn.name}/$itemIndex") }
+            .padding(bottom = 10.dp)
     ) {
 
-        Spacer(modifier = Modifier.height(8.dp))
+        //Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = title[itemIndex], fontSize = 16.sp, color = fontprimary, fontFamily = interBold
         )
@@ -131,9 +136,11 @@ fun ColumnListItem(
 fun RowListItem(
     itemIndex2: Int, title2: Array<String>, genre2: Array<String>, navController: NavController
 ) {
-    Spacer(modifier = Modifier.width(10.dp))
+    //Spacer(modifier = Modifier.width(0.dp))
     Column(
-        modifier = Modifier.clickable { navController.navigate("${NavigationScreen.DetailScreenRow.name}/$itemIndex2") }
+        modifier = Modifier.clickable {
+            navController.navigate("${NavigationScreen.DetailRow.name}/$itemIndex2") }
+            .padding(end = 20.dp)
     ) {
         Text(
             text = title2[itemIndex2], fontSize = 16.sp, color = fontprimary, fontFamily = interBold

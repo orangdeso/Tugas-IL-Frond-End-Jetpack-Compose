@@ -7,15 +7,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.tugasilfrontend.datamodel.description
+import com.example.tugasilfrontend.datamodel.gambar
 import com.example.tugasilfrontend.datamodel.genre
-import com.example.tugasilfrontend.datamodel.photos
 import com.example.tugasilfrontend.datamodel.title
-import com.example.tugasilfrontend.pages.BottomScreen
-import com.example.tugasilfrontend.pages.DetailScreenColumn
-import com.example.tugasilfrontend.pages.DetailScreenRow
+import com.example.tugasilfrontend.pages.NavbarScreen
+import com.example.tugasilfrontend.pages.DetailColumn
+import com.example.tugasilfrontend.pages.DetailRow
 import com.example.tugasilfrontend.pages.HomeScreen
 import com.example.tugasilfrontend.pages.SplashScreen
-import com.example.tugasilfrontend.pages.WishlistScreen
+import com.example.tugasilfrontend.pages.FavoriteScreen
 
 
 @Composable
@@ -29,12 +29,12 @@ fun Navigation() {
         composable(NavigationScreen.SplashScreen.name) {
             SplashScreen(navController = navController)
         }
-        composable(NavigationScreen.BottomScreen.name) {
-            BottomScreen()
+        composable(NavigationScreen.NavbarScreen.name) {
+            NavbarScreen()
         }
         composable(NavigationScreen.HomeScreen.name) {
             HomeScreen(
-                imageId = photos,
+                imageId = gambar,
                 titleHome = title,
                 genreHome = genre,
                 titleHome2 = title,
@@ -42,30 +42,30 @@ fun Navigation() {
                 navController
             )
         }
-        composable(NavigationScreen.WishlistScreen.name) {
-            WishlistScreen(imageId2 = photos, titleAnimeWishlist = title, navController)
+        composable(NavigationScreen.FavoriteScreen.name) {
+            FavoriteScreen(imageId2 = gambar, titleDrakor = title, navController)
         }
-        composable("${NavigationScreen.DetailScreenColumn.name}/{index}", arguments = listOf(
+        composable("${NavigationScreen.DetailColumn.name}/{index}", arguments = listOf(
             navArgument(name = "index") {
                 type = NavType.IntType
             }
         )) { index ->
-            DetailScreenColumn(
+            DetailColumn(
                 itemIndex = index.arguments?.getInt("index"),
-                photos = photos,
+                photos = gambar,
                 titleanime = title,
                 description = description,
                 navController = navController
             )
         }
-        composable("${NavigationScreen.DetailScreenRow.name}/{index2}", arguments = listOf(
+        composable("${NavigationScreen.DetailRow.name}/{index2}", arguments = listOf(
             navArgument(name = "index2") {
                 type = NavType.IntType
             }
         )) { index ->
-            DetailScreenRow(
+            DetailRow(
                 itemIndex = index.arguments?.getInt("index2"),
-                photos2 = photos,
+                photos2 = gambar,
                 titleanime2 = title,
                 description2 = description,
                 navController

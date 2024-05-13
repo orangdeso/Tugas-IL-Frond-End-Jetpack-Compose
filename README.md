@@ -1,11 +1,12 @@
-<h1>Tugas Infinite Learning (Front End Compose)</h1>
+<h1>Tugas Front End Jetpack Compose Infite Learning</h1>
 
-<h3>Menerapkan Bottom Navigation (3 Screen)</h3>
+<h3>Mengimplementasikan 3 Halaman Screnn</h3>
 
-1.  First Screen
-    +  Lazy Column
-    -  Lazy Row
-    -  Detail Screen
+1.  Home Screen
+Berisikan sebagai berikut : 
+    -  Lazy Row : berisikan 10 data item
+    -  Lazy Column : berisikan 10 data item
+    -  Detail Screen : untuk menampilkan detail
 2.  Second Screen
     -  Lazy Grid
     -  Detail Screen

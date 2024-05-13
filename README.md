@@ -3,7 +3,7 @@
 <h3>Mengimplementasikan 3 Halaman Screnn</h3>
 
 1.  Home Screen
-    Berisikan sebagai berikut : 
+    <h3> Berisikan sebagai berikut :</h3>
     -  Lazy Row : berisikan 10 data item
     -  Lazy Column : berisikan 10 data item
     -  Detail Screen : untuk menampilkan detail
